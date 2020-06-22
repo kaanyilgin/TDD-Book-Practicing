@@ -11,11 +11,5 @@ namespace ProductionCode
         {
             return new Dollar(this.amount * multiplier);
         }
-
-        public override bool Equals(object? obj)
-        {
-            Money money = (Money) obj;
-            return this.amount == money.amount;
-        }
     }
 }
