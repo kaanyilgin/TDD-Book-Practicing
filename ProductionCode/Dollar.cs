@@ -9,9 +9,9 @@ namespace ProductionCode
             this.amount = amount;
         }
 
-        public void Times(int i)
+        public void Times(int multiplier)
         {
-            this.amount = this.amount * i;
+            this.amount *= multiplier;
         }
     }
 }
