@@ -4,14 +4,14 @@ namespace ProductionCode
     {
         public int amount;
 
-        public Dollar(int i)
+        public Dollar(int amount)
         {
-            this.amount = 5 * 2;
+            this.amount = amount;
         }
 
         public void Times(int i)
         {
-            
+            this.amount = this.amount * i;
         }
     }
 }
