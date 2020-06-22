@@ -11,8 +11,7 @@ namespace ProductionCode
 
         public Dollar Times(int multiplier)
         {
-            this.amount *= multiplier;
-            return null;
+            return new Dollar(this.amount * multiplier);
         }
     }
 }
