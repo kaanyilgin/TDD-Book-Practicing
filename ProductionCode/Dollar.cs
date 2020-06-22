@@ -14,8 +14,8 @@ namespace ProductionCode
 
         public override bool Equals(object? obj)
         {
-            Dollar dollar = (Dollar) obj;
-            return this.amount == dollar.amount;
+            Money money = (Money) obj;
+            return this.amount == money.amount;
         }
     }
 }

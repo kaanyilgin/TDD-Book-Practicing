@@ -2,6 +2,6 @@ namespace ProductionCode
 {
     public class Money
     {
-        protected int amount;
+        protected internal int amount;
     }
 }
