@@ -1,6 +1,6 @@
 namespace ProductionCode
 {
-    public class Dollar
+    public class Dollar : Money
     {
         private int amount;
 
