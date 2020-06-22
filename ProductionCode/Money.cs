@@ -7,7 +7,7 @@ namespace ProductionCode
         public override bool Equals(object? obj)
         {
             Money money = (Money) obj;
-            return this.amount == money.amount;
+            return this.amount == money.amount && GetType() == money.GetType();
         }
     }
 }
