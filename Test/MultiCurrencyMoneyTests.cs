@@ -21,8 +21,8 @@ namespace Test
             Dollar five = new Dollar(5);
             Dollar product = five.Times(2);
             Assert.That(product.amount, Is.EqualTo(10));
-            product.Times(3);
-            Assert.That(five.amount, Is.EqualTo(15));
+            product = five.Times(3);
+            Assert.That(product.amount, Is.EqualTo(15));
         }
     }
 }
