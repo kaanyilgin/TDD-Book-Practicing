@@ -19,8 +19,8 @@ namespace Test
         public void TestMultiplicationTwoTimes()
         {
             Dollar five = new Dollar(5);
-            five.Times(2);
-            five.Times(3);
+            Dollar product = five.Times(2);
+            product = five.Times(3);
             Assert.That(15, Is.EqualTo(five.amount));
         }
     }
