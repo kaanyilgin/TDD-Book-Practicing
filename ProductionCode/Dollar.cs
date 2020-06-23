@@ -2,12 +2,10 @@ namespace ProductionCode
 {
     public class Dollar : Money
     {
-        public Dollar(int amount, string currency)
+        public Dollar(int amount, string currency) : base(amount, currency)
         {
-            this.amount = amount;
-            this.currency = currency;
         }
-
+        
         public override Money Times(int multiplier)
         {
             return Money.Dollar(this.amount * multiplier);

@@ -5,6 +5,12 @@ namespace ProductionCode
         protected internal int amount;
         protected string currency;
         
+        public Money(int amount, string currency)
+        {
+            this.amount = amount;
+            this.currency = currency;
+        }
+        
         public override bool Equals(object? obj)
         {
             Money money = (Money) obj;
@@ -18,7 +24,7 @@ namespace ProductionCode
 
         public static Money Franc(int amount)
         {
-            return new Franc(amount);
+            return new Franc(amount, "CHF");
         }
         
         public string Currency()
