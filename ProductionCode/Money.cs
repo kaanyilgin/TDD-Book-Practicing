@@ -16,7 +16,8 @@ namespace ProductionCode
         public override bool Equals(object? obj)
         {
             Money money = (Money) obj;
-            return this.amount == money.amount && GetType() == money.GetType();
+            return this.amount == money.amount && 
+                   this.Currency().Equals(money.Currency());
         }
 
         public static Money Dollar(int multiplier)

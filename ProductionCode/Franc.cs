@@ -8,7 +8,7 @@ namespace ProductionCode
 
         public override Money Times(int multiplier)
         {
-            return new Money(this.amount * multiplier, currency);
+            return new Franc(this.amount * multiplier, currency);
         }
     }
 }
