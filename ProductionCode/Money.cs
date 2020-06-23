@@ -9,5 +9,10 @@ namespace ProductionCode
             Money money = (Money) obj;
             return this.amount == money.amount && GetType() == money.GetType();
         }
+
+        public static Dollar Dollar(int amount)
+        {
+            return new Dollar(amount);
+        }
     }
 }
