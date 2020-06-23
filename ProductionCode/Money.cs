@@ -13,7 +13,7 @@ namespace ProductionCode
 
         public static Money Dollar(int multiplier)
         {
-            return new Dollar(multiplier, null);
+            return new Dollar(multiplier, "USD");
         }
 
         public static Money Franc(int amount)
