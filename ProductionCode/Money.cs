@@ -3,9 +3,7 @@ namespace ProductionCode
     public abstract class Money
     {
         protected internal int amount;
-        
-        public abstract Money Times(int multiplier);
-        public abstract string Currency();
+        protected string currency;
         
         public override bool Equals(object? obj)
         {
@@ -15,12 +13,19 @@ namespace ProductionCode
 
         public static Money Dollar(int multiplier)
         {
-            return new Dollar(multiplier);
+            return new Dollar(multiplier, null);
         }
 
         public static Money Franc(int amount)
         {
             return new Franc(amount);
         }
+        
+        public string Currency()
+        {
+            return this.currency;
+        }
+        
+        public abstract Money Times(int multiplier);
     }
 }

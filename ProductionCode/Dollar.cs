@@ -2,9 +2,7 @@ namespace ProductionCode
 {
     public class Dollar : Money
     {
-        private string currency;
-        
-        public Dollar(int amount)
+        public Dollar(int amount, string currency)
         {
             this.amount = amount;
             this.currency = "USD";
@@ -12,12 +10,7 @@ namespace ProductionCode
 
         public override Money Times(int multiplier)
         {
-            return new Dollar(this.amount * multiplier);
-        }
-
-        public override string Currency()
-        {
-            return this.currency;
+            return new Dollar(this.amount * multiplier, null);
         }
     }
 }
