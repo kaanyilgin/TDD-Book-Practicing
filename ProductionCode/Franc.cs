@@ -7,7 +7,7 @@ namespace ProductionCode
             this.amount = amount;
         }
 
-        public Franc Times(int multiplier)
+        public Money Times(int multiplier)
         {
             return new Franc(this.amount * multiplier);
         }
