@@ -10,7 +10,7 @@ namespace Test
         [Test]
         public void TestMultiplication()
         {
-            Dollar five = new Dollar(5);
+            Dollar five = Money.dollar(5);
             Assert.That(five.Times(2), Is.EqualTo(new Dollar(10)));
             Assert.That(five.Times(3) , Is.EqualTo(new Dollar(15)));
         }
