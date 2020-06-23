@@ -1,18 +1,20 @@
 namespace ProductionCode
 {
-    public class Money
+    public abstract class Money
     {
         protected internal int amount;
-
+        
+        public abstract Money Times(int multiplier);
+        
         public override bool Equals(object? obj)
         {
             Money money = (Money) obj;
             return this.amount == money.amount && GetType() == money.GetType();
         }
 
-        public static Dollar Dollar(int amount)
+        public static Money Dollar(int multiplier)
         {
-            return new Dollar(amount);
+            return new Dollar(multiplier);
         }
     }
 }
