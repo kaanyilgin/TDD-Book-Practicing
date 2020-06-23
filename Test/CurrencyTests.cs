@@ -9,8 +9,8 @@ namespace Test
         [Test]
         public void testCurrency()
         {
-            Assert.That(Money.Dollar(1).currency(), "USD");
-            Assert.That(Money.Franc(1).currency(), "CHF");
+            Assert.That(Money.Dollar(1).Currency(), Is.EqualTo("USD"));
+            Assert.That(Money.Franc(1).Currency(), Is.EqualTo("CHF"));
         }
     }
 }

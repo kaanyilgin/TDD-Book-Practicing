@@ -11,5 +11,10 @@ namespace ProductionCode
         {
             return new Dollar(this.amount * multiplier);
         }
+
+        public override string Currency()
+        {
+            return "USD";
+        }
     }
 }

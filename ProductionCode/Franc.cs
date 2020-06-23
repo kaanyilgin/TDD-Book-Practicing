@@ -11,5 +11,10 @@ namespace ProductionCode
         {
             return new Franc(this.amount * multiplier);
         }
+
+        public override string Currency()
+        {
+            return "CHF";
+        }
     }
 }
