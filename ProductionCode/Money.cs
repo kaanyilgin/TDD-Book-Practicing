@@ -1,6 +1,8 @@
+using System.Threading;
+
 namespace ProductionCode
 {
-    public abstract class Money
+    public class Money
     {
         protected internal int amount;
         protected string currency;
@@ -31,7 +33,15 @@ namespace ProductionCode
         {
             return this.currency;
         }
-        
-        public abstract Money Times(int multiplier);
+
+        public virtual Money Times(int multiplier)
+        {
+            return null;
+        }
+
+        public override string ToString()
+        {
+            return this.amount + " " + currency;
+        }
     }
 }
