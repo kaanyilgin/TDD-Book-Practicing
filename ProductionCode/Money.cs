@@ -16,5 +16,10 @@ namespace ProductionCode
         {
             return new Dollar(multiplier);
         }
+
+        public static Money Franc(int amount)
+        {
+            return new Franc(amount);
+        }
     }
 }

@@ -9,9 +9,9 @@ namespace Test
         [Test]
         public void testFrancMultiplication()
         {
-            Franc five = new Franc(5);
-            Assert.That(five.Times(2), Is.EqualTo(new Franc(10)));
-            Assert.That(five.Times(3) , Is.EqualTo(new Franc(15)));
+            Money five = Money.Franc(5);
+            Assert.That(five.Times(2), Is.EqualTo(Money.Franc(10)));
+            Assert.That(five.Times(3) , Is.EqualTo(Money.Franc(15)));
         }
     }
 }
