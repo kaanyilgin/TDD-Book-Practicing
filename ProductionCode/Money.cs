@@ -2,7 +2,7 @@ using System.Threading;
 
 namespace ProductionCode
 {
-    public class Money
+    public class Money : Expression
     {
         protected internal int amount;
         protected string currency;

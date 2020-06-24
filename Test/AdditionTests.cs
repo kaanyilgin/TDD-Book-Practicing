@@ -9,8 +9,11 @@ namespace Test
         [Test]
         public void testSimpleAddition()
         {
-            Money sum = Money.Dollar(5).Plus(Money.Dollar(5));
-            Assert.That(sum, Is.EqualTo(Money.Dollar(10)));
+            Money five = Money.Dollar(5);
+            Expression sum = five.Plus(five);
+            Bank bank = new Bank();
+            Money reduced = bank.Reduce(sum, "USD");
+            Assert.That(reduced, Is.EqualTo(Money.Dollar(10)));
         }
     }
 }
