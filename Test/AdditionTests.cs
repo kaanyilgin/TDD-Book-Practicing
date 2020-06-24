@@ -43,5 +43,12 @@ namespace Test
             Money result = bank.Reduce(Money.Dollar(1), "USD");
             Assert.That(result, Is.EqualTo(Money.Dollar(1)));
         }
+
+        [Test]
+        public void testIdentityRate()
+        {
+            var bank = new Bank();
+            Assert.That(bank.Rate("USD", "USD"), Is.EqualTo(1));
+        }
     }
 }
