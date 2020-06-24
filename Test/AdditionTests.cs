@@ -35,5 +35,13 @@ namespace Test
             Money result = bank.Reduce(sum, "USD");
             Assert.That(result, Is.EqualTo(Money.Dollar(7)));
         }
+
+        [Test]
+        public void testRecudeMoney()
+        {
+            Bank bank = new Bank();
+            Money result = bank.Reduce(Money.Dollar(1), "USD");
+            Assert.That(result, Is.EqualTo(Money.Dollar(1)));
+        }
     }
 }
