@@ -50,9 +50,9 @@ namespace ProductionCode
             return new Sum(this, addend);
         }
 
-        public Money Reduce(string to)
+        public Money Reduce(Bank bank, string to)
         {
-            int rate = (currency.Equals("CHF") && to.Equals("USD")) ? 2 : 1;
+            var rate = bank.Rate(currency, to);
             return new Money(amount / rate, to);
         }
     }
