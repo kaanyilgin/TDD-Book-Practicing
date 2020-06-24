@@ -22,12 +22,12 @@ namespace ProductionCode
 
         public static Money Dollar(int multiplier)
         {
-            return new Dollar(multiplier, "USD");
+            return new Money(multiplier, "USD");
         }
 
         public static Money Franc(int amount)
         {
-            return new Franc(amount, "CHF");
+            return new Money(amount, "CHF");
         }
         
         public string Currency()
