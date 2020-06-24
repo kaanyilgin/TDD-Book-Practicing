@@ -44,5 +44,10 @@ namespace ProductionCode
         {
             return this.amount + " " + currency;
         }
+
+        public Money Plus(Money addend)
+        {
+            return new Money(amount + addend.amount, currency);
+        }
     }
 }
