@@ -6,5 +6,10 @@ namespace ProductionCode
         {
             return source.Reduce(to);
         }
+
+        public void addRate(string chf, string usd, int i)
+        {
+            
+        }
     }
 }
