@@ -45,9 +45,9 @@ namespace ProductionCode
             return this.amount + " " + currency;
         }
 
-        public Money Plus(Money addend)
+        public Expression Plus(Money addend)
         {
-            return new Money(amount + addend.amount, currency);
+            return new Sum(this, addend);
         }
     }
 }

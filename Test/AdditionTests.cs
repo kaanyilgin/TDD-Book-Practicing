@@ -16,6 +16,7 @@ namespace Test
             Money reduced = bank.Reduce(sum, "USD");
             Assert.That(reduced, Is.EqualTo(Money.Dollar(10)));
         }
+        
         [Test]
         public void testPlusReturnsValue()
         {
@@ -24,6 +25,15 @@ namespace Test
             Sum sum = (Sum) result;
             Assert.That(sum.augend, Is.EqualTo(five));
             Assert.That(sum.addend, Is.EqualTo(five));
+        }
+        
+        [Test]
+        public void testReduceSum()
+        {
+            Expression sum = new Sum(Money.Dollar(3), Money.Dollar(4));
+            Bank bank = new Bank();
+            Money result = bank.Reduce(sum, "USD");
+            Assert.That(result, Is.EqualTo(Money.Dollar(7)));
         }
     }
 }
