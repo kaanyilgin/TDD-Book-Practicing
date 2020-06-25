@@ -35,7 +35,7 @@ namespace ProductionCode
             return this.currency;
         }
 
-        public Money Times(int multiplier)
+        public Expression Times(int multiplier)
         {
             return new Money(this.amount * multiplier, currency);
         }
@@ -45,7 +45,7 @@ namespace ProductionCode
             return this.amount + " " + currency;
         }
 
-        public Expression Plus(Money addend)
+        public Expression Plus(Expression addend)
         {
             return new Sum(this, addend);
         }
