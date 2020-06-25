@@ -16,7 +16,7 @@ namespace Test
             Money reduced = bank.Reduce(sum, "USD");
             Assert.That(reduced, Is.EqualTo(Money.Dollar(10)));
         }
-        
+
         [Test]
         public void testPlusReturnsValue()
         {
@@ -26,7 +26,7 @@ namespace Test
             Assert.That(sum.augend, Is.EqualTo(five));
             Assert.That(sum.addend, Is.EqualTo(five));
         }
-        
+
         [Test]
         public void testReduceSum()
         {
@@ -49,6 +49,17 @@ namespace Test
         {
             var bank = new Bank();
             Assert.That(bank.Rate("USD", "USD"), Is.EqualTo(1));
+        }
+
+        [Test]
+        public void testMixedAddition()
+        {
+            Money fiveBucks = Money.Dollar(5);
+            Money tenFrancs = Money.Franc(10);
+            Bank bank = new Bank();
+            bank.AddRate("CHF", "USD", 2);
+            Money result = bank.Reduce(fiveBucks.Plus(tenFrancs), "USD");
+            Assert.That(result, Is.EqualTo(Money.Dollar(10)));
         }
     }
 }
