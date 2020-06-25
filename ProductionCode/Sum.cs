@@ -25,7 +25,7 @@ namespace ProductionCode
 
         public Expression Times(int multiplier)
         {
-            return null;
+            return new Sum(augend.Times(multiplier), addend.Times(multiplier));
         }
     }
 }
