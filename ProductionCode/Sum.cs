@@ -22,5 +22,10 @@ namespace ProductionCode
         {
             return new Sum(this, addend);
         }
+
+        public Expression Times(int multiplier)
+        {
+            return null;
+        }
     }
 }
