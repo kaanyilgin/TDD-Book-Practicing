@@ -20,7 +20,7 @@ namespace ProductionCode
 
         public Expression Plus(Expression tenFrancs)
         {
-            return null;
+            return new Sum(this, addend);
         }
     }
 }
