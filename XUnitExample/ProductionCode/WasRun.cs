@@ -1,19 +1,17 @@
-﻿using System;
-
-namespace ProductionCode
+﻿namespace ProductionCode
 {
-    public class WasRun
+    public class WasRun : TestCase
     {
         public bool wasRun;
 
-        public WasRun(string testmethod)
+        public WasRun(string name) : base(name)
         {
             this.wasRun = false;
         }
 
-        public void testMethod()
+        public void TestMethod()
         {
-            
+            this.wasRun = true;
         }
     }
 }

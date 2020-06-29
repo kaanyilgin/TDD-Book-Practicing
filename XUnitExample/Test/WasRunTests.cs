@@ -2,14 +2,14 @@
 using ProductionCode;
 
 namespace Test
-{
+{   
     public class WasRunTests
     {
         public void testWasRun()
         {
-            var test = new WasRun("testMethod");
+            var test = new WasRun("TestMethod");
             Console.WriteLine(test.wasRun);
-            test.testMethod();
+            test.Run();
             Console.WriteLine(test.wasRun);
         }
     }
