@@ -2,7 +2,18 @@
 
 namespace ProductionCode
 {
-    public class Class1
+    public class WasRun
     {
+        public bool wasRun;
+
+        public WasRun(string testmethod)
+        {
+            this.wasRun = false;
+        }
+
+        public void testMethod()
+        {
+            
+        }
     }
 }
