@@ -1,4 +1,5 @@
 ﻿using System;
+using ProductionCode;
 using Test;
 
 namespace TestClient
@@ -8,6 +9,7 @@ namespace TestClient
         static void Main(string[] args)
         {
             new WasRunTests().testWasRun();
+            new TestCaseTest("TestRunning").Run();
         }
     }
 }

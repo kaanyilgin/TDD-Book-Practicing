@@ -14,7 +14,7 @@ namespace ProductionCode
 
         public void Run()
         {
-            Type WasRun = typeof(WasRun);
+            Type WasRun = this.GetType();
             MethodInfo toInvoke = WasRun.GetMethod(this.name);
             toInvoke.Invoke(this, null);
         }
