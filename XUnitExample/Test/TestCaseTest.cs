@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Reflection;
 using ProductionCode;
 
 namespace Test
@@ -15,6 +16,13 @@ namespace Test
             Debug.Assert(test.wasRun == false);
             test.Run();
             Debug.Assert(test.wasRun);
+        }
+
+        public void testSetUp()
+        {
+            var test = new WasRun("TestMethod");
+            test.Run();
+            Debug.Assert(test.wasSetUp);
         }
     }
 }
