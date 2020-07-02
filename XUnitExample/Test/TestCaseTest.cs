@@ -18,7 +18,7 @@ namespace Test
             Debug.Assert(test.wasRun);
         }
 
-        public void testSetUp()
+        public void TestSetUp()
         {
             var test = new WasRun("TestMethod");
             test.Run();

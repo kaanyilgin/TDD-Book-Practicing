@@ -14,9 +14,14 @@ namespace ProductionCode
 
         public void Run()
         {
-            Type WasRun = this.GetType();
-            MethodInfo toInvoke = WasRun.GetMethod(this.name);
+            Type type = this.GetType();
+            this.SetUp();
+            MethodInfo toInvoke = type.GetMethod(this.name);
             toInvoke.Invoke(this, null);
+        }
+        
+        public virtual void SetUp()
+        {
         }
     }
 }
