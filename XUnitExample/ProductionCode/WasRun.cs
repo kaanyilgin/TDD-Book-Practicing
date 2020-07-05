@@ -9,11 +9,12 @@ namespace ProductionCode
 
         public WasRun(string name) : base(name)
         {
-            this.wasRun = false;
+            
         }
 
         public override void SetUp()
         {
+            this.wasRun = false;
             this.wasSetUp = true;
         }
 

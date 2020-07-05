@@ -6,13 +6,19 @@ namespace Test
 {
     public class TestCaseTest : TestCase
     {
+        public WasRun test;
+        
         public TestCaseTest(string name) : base(name)
         {
         }
-        
+
+        public override void SetUp()
+        {
+            test = new WasRun("TestMethod");
+        }
+
         public void TestRunning()
         {
-            var test = new WasRun("TestMethod");
             Debug.Assert(test.wasRun == false);
             test.Run();
             Debug.Assert(test.wasRun);
@@ -20,7 +26,6 @@ namespace Test
 
         public void TestSetUp()
         {
-            var test = new WasRun("TestMethod");
             test.Run();
             Debug.Assert(test.wasSetUp);
         }
