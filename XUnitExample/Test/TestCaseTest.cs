@@ -27,7 +27,7 @@ namespace Test
         public void TestSetUp()
         {
             test.Run();
-            Debug.Assert(test.wasSetUp);
+            Debug.Assert("SetUp  " == test.log);
         }
     }
 }
