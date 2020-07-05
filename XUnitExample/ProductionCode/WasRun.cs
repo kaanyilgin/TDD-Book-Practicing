@@ -5,7 +5,7 @@ namespace ProductionCode
     public class WasRun : TestCase
     {
         public bool wasRun;
-        public bool wasSetUp;
+        public string log;
 
         public WasRun(string name) : base(name)
         {
@@ -15,7 +15,7 @@ namespace ProductionCode
         public override void SetUp()
         {
             this.wasRun = false;
-            this.wasSetUp = true;
+            this.log = "SetUp  ";
         }
 
         public void TestMethod()
