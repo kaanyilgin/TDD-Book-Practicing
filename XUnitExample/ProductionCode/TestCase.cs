@@ -18,8 +18,13 @@ namespace ProductionCode
             this.SetUp();
             MethodInfo toInvoke = type.GetMethod(this.name);
             toInvoke.Invoke(this, null);
+            this.TearDown();
         }
-        
+
+        public virtual void TearDown()
+        {
+        }
+
         public virtual void SetUp()
         {
         }

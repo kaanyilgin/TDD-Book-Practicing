@@ -16,6 +16,11 @@ namespace ProductionCode
             this.log = "SetUp  ";
         }
 
+        public override void TearDown()
+        {
+            this.log += "TearDown  ";
+        }
+
         public void TestMethod()
         {
             this.log += "TestMethod  ";

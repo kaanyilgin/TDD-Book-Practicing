@@ -20,7 +20,7 @@ namespace Test
         public void TestTemplateMethod()
         {
             test.Run();
-            Debug.Assert("SetUp  TestMethod  " == test.log);
+            Debug.Assert("SetUp  TestMethod  TearDown  " == test.log);
         }
     }
 }
