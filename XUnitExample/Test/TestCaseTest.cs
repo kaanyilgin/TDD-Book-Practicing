@@ -17,17 +17,10 @@ namespace Test
             test = new WasRun("TestMethod");
         }
 
-        public void TestRunning()
-        {
-            Debug.Assert(test.wasRun == false);
-            test.Run();
-            Debug.Assert(test.wasRun);
-        }
-
-        public void TestSetUp()
+        public void TestTemplateMethod()
         {
             test.Run();
-            Debug.Assert("SetUp  " == test.log);
+            Debug.Assert("SetUp  TestMethod  " == test.log);
         }
     }
 }
