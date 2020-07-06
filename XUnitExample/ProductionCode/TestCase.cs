@@ -14,12 +14,14 @@ namespace ProductionCode
 
         public TestResult Run()
         {
+            var result = new TestResult();
+            result.TestStarted();
             Type type = this.GetType();
             this.SetUp();
             MethodInfo toInvoke = type.GetMethod(this.name);
             toInvoke.Invoke(this, null);
             this.TearDown();
-            return new TestResult();
+            return result;
         }
 
         public virtual void TearDown()
