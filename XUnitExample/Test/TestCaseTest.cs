@@ -28,5 +28,12 @@ namespace Test
             var result = test.Run();
             Debug.Assert("1 run, 0 failed" == result.Summary());
         }
+
+        public void TestFailedResult()
+        {
+            var test = new WasRun("TestBrokenMethod");
+            var testResult = test.Run();
+            Debug.Assert("1 run, 1 failed" == testResult.Summary());
+        }
     }
 }

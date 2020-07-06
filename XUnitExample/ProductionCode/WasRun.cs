@@ -25,5 +25,10 @@ namespace ProductionCode
         {
             this.log += "TestMethod  ";
         }
+
+        public void TestBrokenMethod()
+        {
+            throw new Exception();
+        }
     }
 }
