@@ -18,8 +18,15 @@ namespace ProductionCode
             result.TestStarted();
             Type type = this.GetType();
             this.SetUp();
-            MethodInfo toInvoke = type.GetMethod(this.name);
-            toInvoke.Invoke(this, null);
+            try
+            {
+                MethodInfo toInvoke = type.GetMethod(this.name);
+                toInvoke.Invoke(this, null);
+            }
+            catch (Exception e)
+            {
+                result.TestFailed();
+            }
             this.TearDown();
             return result;
         }
