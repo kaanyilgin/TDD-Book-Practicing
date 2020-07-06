@@ -12,13 +12,14 @@ namespace ProductionCode
             this.name = name;
         }
 
-        public void Run()
+        public TestResult Run()
         {
             Type type = this.GetType();
             this.SetUp();
             MethodInfo toInvoke = type.GetMethod(this.name);
             toInvoke.Invoke(this, null);
             this.TearDown();
+            return new TestResult();
         }
 
         public virtual void TearDown()

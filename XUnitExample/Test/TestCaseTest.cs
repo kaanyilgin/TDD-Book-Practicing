@@ -22,5 +22,11 @@ namespace Test
             test.Run();
             Debug.Assert("SetUp  TestMethod  TearDown  " == test.log);
         }
+
+        public void TestResult()
+        {
+            var result = test.Run();
+            Debug.Assert("1 run, 0 failed" == result.Summary());
+        }
     }
 }
