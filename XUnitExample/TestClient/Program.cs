@@ -10,6 +10,7 @@ namespace TestClient
             new TestCaseTest("TestResult").Run();
             new TestCaseTest("TestFailedResultFormatting").Run();
             new TestCaseTest("TestFailedResult").Run();
+            new TestCaseTest("TestSetupFailedResult").Run();
         }
     }
 }

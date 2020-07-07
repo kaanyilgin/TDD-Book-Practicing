@@ -17,9 +17,10 @@ namespace ProductionCode
             var result = new TestResult();
             result.TestStarted();
             Type type = this.GetType();
-            this.SetUp();
+            
             try
             {
+                this.SetUp();
                 MethodInfo toInvoke = type.GetMethod(this.name);
                 toInvoke.Invoke(this, null);
             }
@@ -27,6 +28,7 @@ namespace ProductionCode
             {
                 result.TestFailed();
             }
+            
             this.TearDown();
             return result;
         }

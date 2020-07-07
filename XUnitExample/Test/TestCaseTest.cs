@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using System.Reflection;
 using ProductionCode;
@@ -42,6 +43,25 @@ namespace Test
             var test = new WasRun("TestBrokenMethod");
             var testResult = test.Run();
             Debug.Assert("1 run, 1 failed" == testResult.Summary());
+        }
+
+        public void TestSetupFailedResult()
+        {
+            var test = new FakeWasRun("TestMethod");
+            var testResult = test.Run();
+            Debug.Assert("1 run, 1 failed" == testResult.Summary());
+        }
+    }
+
+    public class FakeWasRun : WasRun
+    {
+        public FakeWasRun(string name) : base(name)
+        {
+        }
+
+        public override void SetUp()
+        {
+            throw new Exception();
         }
     }
 }
