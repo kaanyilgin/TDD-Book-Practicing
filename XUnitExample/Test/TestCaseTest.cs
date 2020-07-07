@@ -51,6 +51,15 @@ namespace Test
             var testResult = test.Run();
             Debug.Assert("1 run, 1 failed" == testResult.Summary());
         }
+
+        public void TestSuite()
+        {
+            var suit  = new TestSuite();
+            suit.add(new WasRun("TestMethod"));
+            suit.add(new WasRun("TestBrokenMethod"));
+            TestResult result = suit.run();
+            Debug.Assert("2 run, 1 failed" == result.Summary());
+        }
     }
 
     public class FakeWasRun : WasRun
