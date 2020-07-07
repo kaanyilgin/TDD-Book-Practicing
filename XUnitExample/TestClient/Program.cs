@@ -1,4 +1,5 @@
-﻿using Test;
+﻿using System;
+using Test;
 
 namespace TestClient
 {
@@ -6,11 +7,11 @@ namespace TestClient
     {
         static void Main(string[] args)
         {
-            new TestCaseTest("TestTemplateMethod").Run();
-            new TestCaseTest("TestResult").Run();
-            new TestCaseTest("TestFailedResultFormatting").Run();
-            new TestCaseTest("TestFailedResult").Run();
-            new TestCaseTest("TestSetupFailedResult").Run();
+            Console.WriteLine(new TestCaseTest("TestTemplateMethod").Run().Summary());
+            Console.WriteLine(new TestCaseTest("TestResult").Run().Summary());
+            Console.WriteLine(new TestCaseTest("TestFailedResultFormatting").Run().Summary());
+            Console.WriteLine(new TestCaseTest("TestFailedResult").Run().Summary());
+            Console.WriteLine(new TestCaseTest("TestSetupFailedResult").Run().Summary());
         }
     }
 }
