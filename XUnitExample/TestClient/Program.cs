@@ -1,4 +1,5 @@
 ﻿using System;
+using ProductionCode;
 using Test;
 
 namespace TestClient
@@ -7,11 +8,16 @@ namespace TestClient
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(new TestCaseTest("TestTemplateMethod").Run().Summary());
-            Console.WriteLine(new TestCaseTest("TestResult").Run().Summary());
-            Console.WriteLine(new TestCaseTest("TestFailedResultFormatting").Run().Summary());
-            Console.WriteLine(new TestCaseTest("TestFailedResult").Run().Summary());
-            Console.WriteLine(new TestCaseTest("TestSetupFailedResult").Run().Summary());
+            var suite = new TestSuite();
+            suite.Add(new TestCaseTest("TestTemplateMethod"));
+            suite.Add(new TestCaseTest("TestResult"));
+            suite.Add(new TestCaseTest("TestFailedResultFormatting"));
+            suite.Add(new TestCaseTest("TestFailedResult"));
+            suite.Add(new TestCaseTest("TestSetupFailedResult"));
+            suite.Add(new TestCaseTest("TestSuite"));
+            var result = new TestResult();
+            suite.Run(result);
+            Console.WriteLine(result.Summary());
         }
     }
 }

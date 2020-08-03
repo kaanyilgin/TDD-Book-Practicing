@@ -8,6 +8,7 @@ namespace Test
     public class TestCaseTest : TestCase
     {
         public WasRun test;
+        public TestResult result;
         
         public TestCaseTest(string name) : base(name)
         {
@@ -15,18 +16,20 @@ namespace Test
 
         public override void SetUp()
         {
-            test = new WasRun("TestMethod");
+            result = new TestResult();
         }
 
         public void TestTemplateMethod()
         {
-            test.Run();
+            test = new WasRun("TestMethod");
+            test.Run(result);
             Debug.Assert("SetUp  TestMethod  TearDown  " == test.log);
         }
 
         public void TestResult()
         {
-            var result = test.Run();
+            test = new WasRun("TestMethod");
+            test.Run(result);
             Debug.Assert("1 run, 0 failed" == result.Summary());
         }
 
@@ -41,23 +44,23 @@ namespace Test
         public void TestFailedResult()
         {
             var test = new WasRun("TestBrokenMethod");
-            var testResult = test.Run();
-            Debug.Assert("1 run, 1 failed" == testResult.Summary());
+            test.Run(result);
+            Debug.Assert("1 run, 1 failed" == result.Summary());
         }
 
         public void TestSetupFailedResult()
         {
             var test = new FakeWasRun("TestMethod");
-            var testResult = test.Run();
-            Debug.Assert("1 run, 1 failed" == testResult.Summary());
+            test.Run(result);
+            Debug.Assert("1 run, 1 failed" == result.Summary());
         }
 
         public void TestSuite()
         {
             var suit  = new TestSuite();
-            suit.add(new WasRun("TestMethod"));
-            suit.add(new WasRun("TestBrokenMethod"));
-            TestResult result = suit.run();
+            suit.Add(new WasRun("TestMethod"));
+            suit.Add(new WasRun("TestBrokenMethod"));
+            suit.Run(result);
             Debug.Assert("2 run, 1 failed" == result.Summary());
         }
     }

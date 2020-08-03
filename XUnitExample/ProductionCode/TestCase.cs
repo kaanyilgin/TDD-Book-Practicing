@@ -12,9 +12,8 @@ namespace ProductionCode
             this.name = name;
         }
 
-        public TestResult Run()
+        public TestResult Run(TestResult result)
         {
-            var result = new TestResult();
             result.TestStarted();
             Type type = this.GetType();
             
