@@ -15,6 +15,7 @@ namespace TestClient
             suite.Add(new TestCaseTest("TestFailedResult"));
             suite.Add(new TestCaseTest("TestSetupFailedResult"));
             suite.Add(new TestCaseTest("TestSuite"));
+            suite.Add(new TestCaseTest("TestFailedTest"));
             var result = new TestResult();
             suite.Run(result);
             Console.WriteLine(result.Summary());

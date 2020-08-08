@@ -63,6 +63,14 @@ namespace Test
             suit.Run(result);
             Debug.Assert("2 run, 1 failed" == result.Summary());
         }
+
+        public void TestFailedTest()
+        {
+            var suit = new TestSuite();
+            suit.Add(new FakeFailedTest("TestFailedTest"));
+            suit.Run(result);
+            Assert.True("1 run, 1 failed", result.Summary());
+        }
     }
 
     public class FakeWasRun : WasRun
@@ -74,6 +82,17 @@ namespace Test
         public override void SetUp()
         {
             throw new Exception();
+        }
+    }
+    
+    public class FakeFailedTest : WasRun
+    {
+        public FakeFailedTest(string name) : base(name)
+        {
+        }
+        public void TestFailedTest()
+        {
+            Assert.True(1, 2);
         }
     }
 }
