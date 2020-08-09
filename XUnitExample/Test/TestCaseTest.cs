@@ -9,7 +9,7 @@ namespace Test
     {
         public WasRun test;
         public TestResult result;
-        
+
         public TestCaseTest(string name) : base(name)
         {
         }
@@ -23,14 +23,14 @@ namespace Test
         {
             test = new WasRun("TestMethod");
             test.Run(result);
-            Debug.Assert("SetUp  TestMethod  TearDown  " == test.log);
+            Assert.True("SetUp  TestMethod  TearDown  ", test.log);
         }
 
         public void TestResult()
         {
             test = new WasRun("TestMethod");
             test.Run(result);
-            Debug.Assert("1 run, 0 failed" == result.Summary());
+            Assert.True("1 run, 0 failed", result.Summary());
         }
 
         public void TestFailedResultFormatting()
@@ -38,30 +38,30 @@ namespace Test
             var result = new TestResult();
             result.TestStarted();
             result.TestFailed();
-            Debug.Assert("1 run, 1 failed" == result.Summary());
+            Assert.True("1 run, 1 failed", result.Summary());
         }
-        
+
         public void TestFailedResult()
         {
             var test = new WasRun("TestBrokenMethod");
             test.Run(result);
-            Debug.Assert("1 run, 1 failed" == result.Summary());
+            Assert.True("1 run, 1 failed", result.Summary());
         }
 
         public void TestSetupFailedResult()
         {
             var test = new FakeWasRun("TestMethod");
             test.Run(result);
-            Debug.Assert("1 run, 1 failed" == result.Summary());
+            Assert.True("1 run, 1 failed", result.Summary());
         }
 
         public void TestSuite()
         {
-            var suit  = new TestSuite();
+            var suit = new TestSuite();
             suit.Add(new WasRun("TestMethod"));
             suit.Add(new WasRun("TestBrokenMethod"));
             suit.Run(result);
-            Debug.Assert("2 run, 1 failed" == result.Summary());
+            Assert.True("2 run, 1 failed", result.Summary());
         }
 
         public void TestFailedTest()
@@ -84,12 +84,13 @@ namespace Test
             throw new Exception();
         }
     }
-    
+
     public class FakeFailedTest : WasRun
     {
         public FakeFailedTest(string name) : base(name)
         {
         }
+
         public void TestFailedTest()
         {
             Assert.True(1, 2);
